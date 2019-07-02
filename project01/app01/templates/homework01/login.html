@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog在线个人博客Login</title>
+    <!-- 使用模板指令-->
+    {% load static %}
+
+    <!-- 引用外部css样式表 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/homework01.css' %}" />
+
+    <!-- 引用外部JavaScript动态脚本 -->
+    <script type="text/javascript" src="{% static 'scripts/homework01.js' %}"></script>
+</head>
+<body>
+    <h1>Blog在线个人博客</h1>
+    <form>
+       <input type="text" name="firstname">
+       <br>
+       <input type="text" name="lastname">
+    </form>
+    <button type="button"> 马上登陆 </button>
+    <a href="/app01/register">立即注册</a>
+</body>
+</html>

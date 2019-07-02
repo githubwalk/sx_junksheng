@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog在线个人博客Login</title>
+    <!-- 使用模板指令-->
+    {% load static %}
+
+    <!-- 引用外部css样式表 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/homework01.css' %}" />
+
+    <!-- 引用外部JavaScript动态脚本 -->
+    <script type="text/javascript" src="{% static 'scripts/homework01.js' %}"></script>
+</head>
+<body>
+    <h1>注册register</h1>
+    <form>
+        登陆账号:
+       <input type="text" name="firstname">
+
+       <br />
+        登陆密码:
+       <input type="text" name="lastname">
+
+       <br />
+       密码确认:
+       <input type="text" name="lastname">
+
+       <br />
+       用户昵称:
+       <input type="text" name="lastname">
+       <a href="/app01/nameonly">唯一验证</a>
+
+       <br />
+       用户头像:
+       <div id="box">
+        <img id="imgshow" src="" alt=""/>
+      </div>
+      <div id="pox">
+        <input id="filed" type="file" accept="image/*"/>
+      </div>
+       <br />
+       用户性别:
+
+
+    </form>
+
+</body>
+</html>
