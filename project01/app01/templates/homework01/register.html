@@ -16,34 +16,55 @@
 </head>
 <body>
     <h1>注册register</h1>
-    <form>
+    <form name="my_form" method="POST"> <!--待改-->
         登陆账号:
-       <input type="text" name="firstname">
+        <input type="text" name="firstname">
 
-       <br />
+        <br />
         登陆密码:
-       <input type="text" name="lastname">
+        <input type="text" name="lastname">
 
-       <br />
-       密码确认:
-       <input type="text" name="lastname">
+        <br />
+        密码确认:
+        <input type="text" name="lastname">
 
-       <br />
-       用户昵称:
-       <input type="text" name="lastname">
-       <a href="/app01/nameonly">唯一验证</a>
+        <br />
+        用户昵称:
+        <input type="text" name="lastname">
+        <a href="/app01/nameonly">唯一验证</a>
 
-       <br />
-       用户头像:
-       <div id="box">
-        <img id="imgshow" src="" alt=""/>
-      </div>
-      <div id="pox">
-        <input id="filed" type="file" accept="image/*"/>
-      </div>
-       <br />
-       用户性别:
+        <br />
+        用户头像:
+        <div id="preview">
+            <img src="" alt="" id="imghead5" height="200" width="200" />
+        </div>
+        <div class="yanzRight">
+            <input name="evidence" onchange="uploadImg(this,'preview')" type="file"/>
+            <span class="dui" id="imgOrder_dui" style="display: none;"></span>
+        </div>
 
+        <br />
+        用户性别:
+        <input name="sex" type="radio" checked="checked"/>男  
+        <input name="sex" type="radio" />女
+
+        <br />
+        <div>
+            <label for="local">所在城市</label>:</label>
+            <select id="local" >
+                <option>重庆</option>
+                <option>成都</option>
+                <option>广西</option>
+            </select>
+        </div>
+        
+        <br />
+        个性签名:
+        <input type="text" name="lastname">
+
+        <br />
+        <button type="button"> 立即注册 </button>
+        <a href="/app01/login">返回登陆</a>
 
     </form>
 
