@@ -15,18 +15,20 @@
     <script type="text/javascript" src="{% static 'scripts/homework01.js' %}"></script>
 </head>
 <body>
+    <form name="login" action="/app01/ge" method="POST">
+    {% csrf_token %}
     <div class="charinput">
         <h1>Blog在线个人博客</h1>
-        <form name="my_form" method="POST"> <!--待改-->
-        <input type="text" name="firstname" placeholder="请输入登陆账号"><br/>
-        <input type="text" name="lastname" placeholder="请输入登陆密码">
-        </form>
+        <input type="text" name="account" placeholder="请输入登陆账号"><br/>
+        <input type="password" name="password" placeholder="请输入登陆密码">
+        
     </div>
     
     <div class="control">
-        <button type="button" class="button"> 马上登陆 </button>
+        <button type="submit" class="button"> 马上登陆 </button>
         <a href="/app01/register">立即注册</a>
     </div>
+    </form>
 
     
 </body>

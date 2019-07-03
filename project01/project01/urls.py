@@ -25,4 +25,7 @@ urlpatterns = [
     path('app01/login', app01_v.Homework01Login),
     path('app01/register', app01_v.Homework01Register),
     path('app01/ge', app01_v.getData),
+    path('app01/sum/<int:num1>/<int:num2>', app01_v.sum),
+    path('app01/hello', app01_v.hello),
+    path('app01/gotoindex', app01_v.gotoindex),
 ]

@@ -19,7 +19,8 @@
         <h class="zhuce">注册</h>
         <h class="register">register</h>
         <p></p><p></p>
-        <form name="register" method="POST"> <!--待改-->
+        <form name="register" action="/app01/ge" method="POST"> <!--待改-->
+        {% csrf_token %}
 
             登陆账号:
             <input type="text" name="account" placeholder="请输入邮箱地址/电话号码"><br />
@@ -63,7 +64,7 @@
     </div>
         
     <div class="control">
-            <button type="button"> 立即注册 </button>
+            <button type="submit"> 立即注册 </button>
             <a href="/app01/login">返回登陆</a>
     </div>
     </form>
