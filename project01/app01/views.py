@@ -58,7 +58,13 @@ def getCookie(request):
 
 
 def apphome(request):
-    return render(request, 'app01/home.html')
+    # 从session中获取账号, 如果能获取到, 则跳转到home页面, 否则跳转回登陆页面
+    account = request.session.get('account', None)
+    if account:
+        return render(request, 'app01/home.html',{'account':account})
+    else:
+        return render(request, 'app01/login.html',{'msg':'请先登录'})
+    
 
 
 def applogin(request):
@@ -68,7 +74,8 @@ def applogin(request):
         if name == "admin" and password == "123":
             response = redirect('/app01/apphome/')
             response.set_signed_cookie('account', name, salt='aaa')
-
+            # 将账号信息存入session
+            request.session['account']=name
             #登陆成功
             return response
         else:
@@ -77,3 +84,7 @@ def applogin(request):
     else:
         account = request.get_signed_cookie('account',"",salt='aaa')
         return render(request, 'app01/login.html', {'account':account})
+
+def logout(request):
+    del request.session['account']
+    return redirect('/app01/applogin/')

@@ -1,4 +1,4 @@
-"""project01 URL Configuration
+"""proj2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -15,22 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-
-from app01 import views as app01_v
+from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app01/', app01_v.gotoIndex),
-    path('app01/login', app01_v.Homework01Login),
-    path('app01/register', app01_v.Homework01Register),
-    path('app01/ge', app01_v.getData),
-    path('app01/sum/<int:num1>/<int:num2>', app01_v.sum),
-    path('app01/hello', app01_v.hello),
-    path('app01/gotoindex', app01_v.gotoindex),
-    path('app01/addCookie/<str:company>/', app01_v.addCookie),
-    path('app01/getCookie/', app01_v.getCookie),
-    path('app01/applogin/', app01_v.applogin),
-    path('app01/apphome/', app01_v.apphome),
-    path('app01/logout/', app01_v.logout),
+    path('app/index/', views.gotoIndex),
+    path('app/senddata/', views.getData),
+    path('app/add/', views.add),
+    path('app/bookinfo/<str:bookname>/<int:year>', views.bookinfo),
+    path('app/hello/', views.hello),
+    path('app/search/', views.search),
+    path('app/gotosearch/', views.gotosearch),
+    path('app/addCookie/<str:company>', views.addCookie),
+    path('app/getCookie/', views.getCookie),
+    path('app/login/', views.login),
+    path('app/home/', views.home),
+    path('app/logout/', views.logout),
 ]
