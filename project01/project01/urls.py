@@ -28,4 +28,8 @@ urlpatterns = [
     path('app01/sum/<int:num1>/<int:num2>', app01_v.sum),
     path('app01/hello', app01_v.hello),
     path('app01/gotoindex', app01_v.gotoindex),
+    path('app01/addCookie/<str:company>/', app01_v.addCookie),
+    path('app01/getCookie/', app01_v.getCookie),
+    path('app01/applogin/', app01_v.applogin),
+    path('app01/apphome/', app01_v.apphome),
 ]

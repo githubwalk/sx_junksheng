@@ -38,3 +38,42 @@ def hello(request):
 
 def gotoindex(request):
     return render(request, 'app01/index.html')
+
+def setCookies(request, company):
+    rep = redirect('/app01/')
+    rep.set_cookie('company', company)
+    return rep
+
+def addCookie(request, company):
+    response = redirect('/app01/')
+    # 保存cookie
+    response.set_cookie('company', company)
+    # 重定向
+    return response
+
+def getCookie(request):
+    value = request.COOKIES.get('company',"")
+    return render(request, 'app01/index.html', {'company':value})
+
+
+
+def apphome(request):
+    return render(request, 'app01/home.html')
+
+
+def applogin(request):
+    if request.POST:
+        name = request.POST.get('username', None)
+        password = request.POST.get('password', None)
+        if name == "admin" and password == "123":
+            response = redirect('/app01/apphome/')
+            response.set_signed_cookie('account', name, salt='aaa')
+
+            #登陆成功
+            return response
+        else:
+            return render(request, 'app01/login.html', {'msg':"账号或密码错误"})
+        
+    else:
+        account = request.get_signed_cookie('account',"",salt='aaa')
+        return render(request, 'app01/login.html', {'account':account})
