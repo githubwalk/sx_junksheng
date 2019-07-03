@@ -1,6 +1,6 @@
 function uploadImg(file,imgNum){
-    var widthImg = 200; //显示图片的width
-    var heightImg = 200; //显示图片的height
+    var widthImg = 50; //显示图片的width
+    var heightImg = 50; //显示图片的height
     var div = document.getElementById(imgNum);
     if (file.files && file.files[0]){
     div.innerHTML ='<img id="upImg">'; //生成图片

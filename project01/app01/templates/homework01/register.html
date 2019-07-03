@@ -15,28 +15,35 @@
     <script type="text/javascript" src="{% static 'scripts/homework01.js' %}"></script>
 </head>
 <body>
-    <h1>注册register</h1>
-    <form name="my_form" method="POST"> <!--待改-->
-        登陆账号:
-        <input type="text" name="firstname">
+    <div class="charinput">
+        <h class="zhuce">注册</h>
+        <h class="register">register</h>
+        <p></p><p></p>
+        <form name="my_form" method="POST"> <!--待改-->
 
-        <br />
-        登陆密码:
-        <input type="text" name="lastname">
-
-        <br />
-        密码确认:
-        <input type="text" name="lastname">
-
-        <br />
-        用户昵称:
-        <input type="text" name="lastname">
-        <a href="/app01/nameonly">唯一验证</a>
-
-        <br />
-        用户头像:
+            登陆账号:
+            <input type="text" name="firstname" placeholder="请输入邮箱地址/电话号码"><br />
+            
+                登陆密码:
+                <input type="text" name="lastname" placeholder="请输入不少于6位的字符"><br />
+            
+                密码确认:
+                <input type="text" name="lastname" placeholder="两次密码一致"><br />
+            
+            <div class="yanzheng">
+            
+            用户昵称:
+            <input type="text" name="lastname" placeholder="请输入不少于6位的字符">
+            <a href="/app01/nameonly">唯一验证</a>
+            <br/>
+            </div>
+            
+    
+        
+        <h>用户头像:</h><br/>
         <div id="preview">
-            <img src="" alt="" id="imghead5" height="200" width="200" />
+            
+            <img src="{% static 'image/face.jpg' %}" alt="" id="imghead5" height="50" width="50" />
         </div>
         <div class="yanzRight">
             <input name="evidence" onchange="uploadImg(this,'preview')" type="file"/>
@@ -49,7 +56,8 @@
         <input name="sex" type="radio" />女
 
         <br />
-        <div>
+
+        <div class="local">
             <label for="local">所在城市</label>:</label>
             <select id="local" >
                 <option>重庆</option>
@@ -59,14 +67,21 @@
         </div>
         
         <br />
-        个性签名:
-        <input type="text" name="lastname">
 
-        <br />
-        <button type="button"> 立即注册 </button>
-        <a href="/app01/login">返回登陆</a>
+        <div >
+        个性签名:
+        <input type="text" name="lastname" placeholder="请输入不大于30个字"><br />
+        </div>
+    </div>
+        
+        
 
     </form>
+    <div class="control">
+            <button type="button"> 立即注册 </button>
+            <a href="/app01/login">返回登陆</a>
+    </div>
+
 
 </body>
 </html>
