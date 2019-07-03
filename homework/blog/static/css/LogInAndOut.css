@@ -1,0 +1,44 @@
+body {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    left: 55%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+    font-family: Georgia;
+}
+
+.zhuce {
+    font-size: 40px;
+}
+
+.register {
+    color: gray;
+}
+
+input {
+    border-bottom: 1px solid #dbdbdb;  
+    border-top:0px;  
+    border-left:0px;  
+    border-right:0px;  
+}
+
+
+
+.control button{
+    width:120px;
+    height:40px;
+    border: 4px  aliceblue solid;
+    background-color: rgb(50, 127, 228);
+    color: aliceblue;
+}
+a {
+    color: rgb(50, 127, 228);
+    font-size: 12px;
+}
+
+
+.preview img{
+    float: right; 
+    margin: 100px; 
+}
